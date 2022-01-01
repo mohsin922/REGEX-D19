@@ -6,9 +6,15 @@ namespace REGEX
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Regex!");
-            Patterns patterns = new Patterns();
-            patterns.Pattern();
+            string FirstName, LastName;
+            Console.Write("Enter First Name: ");
+            FirstName = Console.ReadLine();
+            Patterns.checkFirstName(FirstName);
+
+            Console.Write("Enter Last Name: ");
+            LastName = Console.ReadLine();
+            Patterns.checkLastName(LastName);
+            Console.WriteLine(FirstName + " " + LastName);
         }
     }
 }

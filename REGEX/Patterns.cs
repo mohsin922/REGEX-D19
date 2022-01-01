@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace REGEX
 {
-    class Patterns
+    public class Patterns
     {
-        public void Pattern()
+        public static string Regex_FirstName = "^[A-Z][a-z]{2,}$";
+        public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
+
+        public static bool ValidateFirstName(string FirstName)
         {
-            Console.Write("Enter Name: ");
-            string name = Console.ReadLine();
-            string s = @"^[A-Z]{1}[a-z]{3,}$";
-            Regex Name = new Regex(s);
-            Console.WriteLine($"Name is: {Name.Match(name)}");
+            return Regex.IsMatch(FirstName, Regex_FirstName);
+        }
+
+
+        public static void checkFirstName(string FirstName)
+        {
+            if (Regex.IsMatch(FirstName, Regex_FirstName) == false)
+            {
+                Console.WriteLine("Enter valid First name. It should Start with Capital letters and minimum 3 letters!");
+            }
+        }
+
+
+        public static bool ValidateLastName(string LastName)
+        {
+            return Regex.IsMatch(LastName, Regex_LastName);
+        }
+
+        public static void checkLastName(string LastName)
+        {
+            if (Regex.IsMatch(LastName, Regex_LastName) == false)
+            {
+                Console.WriteLine("Enter valid Last name. It should Start with Capital letters and minimum 3 letters!");
+            }
         }
     }
+
 }
