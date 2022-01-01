@@ -23,6 +23,10 @@ namespace REGEX
             Console.Write("Enter your mobile number: ");
             string number = Console.ReadLine();
             Patterns.checknumber(number);
+
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+            Patterns.checkPassword(password);
         }
     }
 }
