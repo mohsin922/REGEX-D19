@@ -15,6 +15,10 @@ namespace REGEX
             LastName = Console.ReadLine();
             Patterns.checkLastName(LastName);
             Console.WriteLine(FirstName + " " + LastName);
+
+            Console.Write("Enter your email addresss: ");
+            string email = Console.ReadLine();
+            Patterns.checkemail(email);
         }
     }
 }
