@@ -19,6 +19,10 @@ namespace REGEX
             Console.Write("Enter your email addresss: ");
             string email = Console.ReadLine();
             Patterns.checkemail(email);
+
+            Console.Write("Enter your mobile number: ");
+            string number = Console.ReadLine();
+            Patterns.checknumber(number);
         }
     }
 }
