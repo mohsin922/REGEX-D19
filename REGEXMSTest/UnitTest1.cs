@@ -7,27 +7,42 @@ namespace REGEXMSTest
     public class UnitTest1
     {//validation for first Name
         [TestMethod]
-        [DataRow("Samath", "Samath")]
-        [DataRow("Sa", "Sa")]
-        [DataRow("s", null)]
-        [DataRow("Sama05", null)]
+        [DataRow("Mohsin", "Mohsin")]
+        [DataRow("Mo", "Mo")]
+        [DataRow("m", null)]
+        [DataRow("Moh06", null)]
 
         public void ValidateFirstname(string a, string expected)
         {
 
-            var actual = RegexSample.ValidatingFirstName(a);
-            Assert.AreEqual(expected, actual);
+            try
+            {
+
+                var actual = RegexSample.ValidatingFirstName(a);
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException actual)
+            {
+                Assert.AreEqual(expected, actual.message);
+            }
         }
         //Validating for Last Name
         [TestMethod]
-        [DataRow("Sethi", "Sethi")]
-        [DataRow("Sethi", null)]
-        [DataRow("SethiSamarth", "SethiSamarth")]
-        [DataRow("Samarth05", null)]
+        [DataRow("Zahoor", "Zahoor")]
+        [DataRow("Zahoor", null)]
+        [DataRow("MohsinZahoor", "MohsinZahoor")]
+        [DataRow("Mohsin06", null)]
         public void ValidateUserLastname(string a, string expected)
         {
-            var actual = RegexSample.ValidatingLastName(a);
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                var actual = RegexSample.ValidatingLastName(a);
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException actual)
+            {
+                Assert.AreEqual(expected, actual.message);
+            }
         }
         //Validation for Email
         [TestMethod]
@@ -56,8 +71,15 @@ namespace REGEXMSTest
 
         public void ValidateUserEmail(string a, string expected)
         {
-            var actual = RegexSample.ValidatingEmailId(a);
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                var actual = RegexSample.ValidatingEmailId(a);
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException actual)
+            {
+                Assert.AreEqual(expected, actual.message);
+            }
         }
 
         //Validation for Phone Number
@@ -71,31 +93,45 @@ namespace REGEXMSTest
         [DataRow("91 984290505000000", null)]
         public void ValidateUserPhoneNumber(string a, string expected)
         {
-            var actual = RegexSample.ValidatingPhoneNum(a);
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                var actual = RegexSample.ValidatingPhoneNum(a);
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException actual)
+            {
+                Assert.AreEqual(expected, actual.message);
+            }
         }
 
         ////Validation for Password
         [TestMethod]
-        [DataRow("Sam@123", "Sam@123")]
-        [DataRow("Sam#123", "Sam#123")]
-        [DataRow("Sam@1S ", "Sam@1S")]
-        [DataRow("@sam129", "@Sam129")]
-        [DataRow("Sa-m123", "Sa-m123")]
-        [DataRow("sam123)@1234", null)]
-        [DataRow("Sam@lini", null)]
-        [DataRow("sam123", null)]
-        [DataRow("sam@123", null)]
-        [DataRow("@sam#12sam", null)]
-        [DataRow(")sam12", null)]
-        [DataRow(")sam12", null)]
-        [DataRow("sa-m@12S", null)]
-        [DataRow("sam@s", null)]
+        [DataRow("Moh@123", "Moh@123")]
+        [DataRow("Moh#123", "Moh#123")]
+        [DataRow("Moh@1S ", "Moh@1S")]
+        [DataRow("@Moh129", "@Moh129")]
+        [DataRow("Mo-h123", "Mo-h123")]
+        [DataRow("Moh123)@1234", null)]
+        [DataRow("Moh@aha", null)]
+        [DataRow("Moh123", null)]
+        [DataRow("Moh@123", null)]
+        [DataRow("@Moh#12Moh", null)]
+        [DataRow(")Moh12", null)]
+        [DataRow(")Moh12", null)]
+        [DataRow("Mo-h@12S", null)]
+        [DataRow("Moh@s", null)]
 
         public void ValidateUserPassword(string a, string expected)
         {
-            var actual = RegexSample.ValidatingPassWord(a);
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                var actual = RegexSample.ValidatingPassWord(a);
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException actual)
+            {
+                Assert.AreEqual(expected, actual.message);
+            }
         }
 
     }
